@@ -3,7 +3,7 @@ import BeersList from "../components/beersList";
 export default function ProductsDetails() {
   const { data: beers, isLoading, error } = useGetAllBeersQuery();
   //Loading data
-  if (isLoading){
+  if (isLoading) {
     return <div>Loading</div>;
   }
   //Handling errors

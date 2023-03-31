@@ -1,3 +1,5 @@
+import BeersApi from "@/api/beersApi";
+import BeersList from "@/components/beersList";
 import Header from "@/components/headerComponent";
 
 export default function Home() {
@@ -5,6 +7,7 @@ export default function Home() {
     <>
       <div>
         <Header />
+        <BeersApi />
       </div>
     </>
   );
