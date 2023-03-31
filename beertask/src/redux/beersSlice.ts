@@ -5,7 +5,7 @@ export const beersApi: any = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.punkapi.com/v2/" }),
   endpoints: (builder) => ({
     getAllBeers: builder.query({
-      query: () => "beers",
+      query: () => "beers?per_page=12",
     }),
 
     getBeers: builder.query({
