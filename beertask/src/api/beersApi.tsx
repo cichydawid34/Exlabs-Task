@@ -1,7 +1,7 @@
-import { useGetAllBeersQuery } from "../redux/beersSlice";
+import { useGetPageBeersQuery } from "../redux/beersSlice";
 import BeersList from "../components/beersList";
-export default function ProductsDetails() {
-  const { data: beers, isLoading, error } = useGetAllBeersQuery();
+export default function ProductsDetails(Props: any) {
+  const { data: beers, isLoading, error } = useGetPageBeersQuery(Props.page);
 
   //Handling errors
   if (error && error.status === 404) {
