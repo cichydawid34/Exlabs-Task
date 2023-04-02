@@ -7,11 +7,10 @@ import { Key } from "react";
 export default function BeerDetailsPage() {
   const router = useRouter();
   const { bid } = router.query;
-  console.log(`idddd ${bid}`);
-
   return (
     <>
-      <BeerApi beerID={bid} />
+      <Header />
+      <BeerApi beerID={Number(bid)} />
     </>
   );
 }

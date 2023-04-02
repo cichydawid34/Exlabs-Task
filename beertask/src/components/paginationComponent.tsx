@@ -1,15 +1,27 @@
-import { Console } from "console";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Pagination(Props: any) {
+  const router = useRouter();
+
   const changePage = (number: number) => {
-    if (Props.pageNumber + number < 29 && Props.pageNumber + number > 0) {
-      Props.setPageNumber(Props.pageNumber + number);
+    const newPageNumber = Props.pageNumber + number;
+
+    if (newPageNumber >= 1 && newPageNumber <= 29) {
+      Props.setPageNumber(newPageNumber);
+
+      // Update URL parameter
+      router.push(`/?page=${newPageNumber}`);
     }
   };
+
   useEffect(() => {
-    console.log(Props.pageNumber);
-  }, [Props.pageNumber]);
+    // Update page number based on URL parameter
+    const page = parseInt(router.query.page as string);
+    if (!isNaN(page)) {
+      Props.setPageNumber(page);
+    }
+  }, [router.query]);
 
   return (
     <>
