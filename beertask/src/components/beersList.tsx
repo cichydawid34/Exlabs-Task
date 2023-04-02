@@ -45,7 +45,12 @@ export default function BeersList(Props: IProps) {
               <h3 className="group-hover: mt-4 w-[80%] overflow-hidden text-ellipsis  whitespace-nowrap text-center text-lg font-bold">
                 {beer.name} {beer.first_brewed}
               </h3>
-              <div className="mt-4 h-[1px] w-[80%] bg-zinc-400" />
+              <div className="relative mt-4 h-[1px] w-[80%] bg-zinc-400">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/105/105212.png"
+                  className="absolute -top-2  left-[47%]  h-4"
+                />
+              </div>
               {/* Tagline */}
               <div className=" font mt-2 w-[80%] text-center">
                 {beer.tagline}
