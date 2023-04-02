@@ -11,6 +11,11 @@ export default interface IBeer {
   image_url: string;
   name: string;
   ph: number;
+  ingredients: {
+    hops: string[];
+    malt: string[];
+    yeast: string;
+  };
   srm: number;
   tagline: string;
   target_fg: number;

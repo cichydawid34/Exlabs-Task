@@ -1,12 +1,14 @@
 import IBeer from "@/interfaces/Ibeer";
 import BeersListSkeleton from "./skeletons/beersListSkeleton";
+import { useRouter } from "next/router";
 
 type IProps = {
-  data: any;
+  data: IBeer[];
   loading: boolean;
 };
 
 export default function BeersList(Props: IProps) {
+  const router = useRouter();
   console.log(Props.data);
   return (
     <>
@@ -18,6 +20,9 @@ export default function BeersList(Props: IProps) {
             <div
               key={beer.id}
               className="group flex flex-col items-center p-5 pt-2 text-black shadow-lg  transition-all hover:scale-105"
+              onClick={() => {
+                router.push(`/details/${beer.id}`);
+              }}
             >
               {beer.image_url ? (
                 <img
