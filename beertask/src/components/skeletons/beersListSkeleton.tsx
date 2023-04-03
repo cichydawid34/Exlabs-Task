@@ -4,10 +4,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 export default function BeersListSkeleton() {
   return (
     <>
-      <SkeletonTheme baseColor="#F0F0F0" highlightColor="#787878">
+      <SkeletonTheme baseColor="#F0F0F0" highlightColor="#787878" data-testid="beers-list-skeleton">
         {Array.from({ length: 12 }).map((_, index) => (
           <div
-            className="flex flex-col items-center p-5 pt-2 text-black shadow-lg  transition-all hover:scale-105"
+            className="flex flex-col items-center p-5 pt-2 text-black shadow-lg  transition-all hover:scale-105 "
             key={index}
           >
             <Skeleton count={1} width={220} height={200} />

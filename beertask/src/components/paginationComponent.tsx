@@ -33,6 +33,7 @@ export default function Pagination(props: Props) {
         <img
           src="https://cdn-icons-png.flaticon.com/512/10125/10125333.png"
           className="h-9 select-none transition-all hover:scale-105"
+          alt="Previous Page"
           onClick={() => changePage(-1)}
         />
 
@@ -42,6 +43,7 @@ export default function Pagination(props: Props) {
 
         <img
           src="https://cdn-icons-png.flaticon.com/512/10125/10125292.png"
+          alt="Next Page"
           className="h-9 select-none transition-all hover:scale-105 "
           onClick={() => changePage(+1)}
         />
