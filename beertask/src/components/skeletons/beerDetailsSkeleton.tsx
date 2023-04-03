@@ -1,6 +1,7 @@
 import Header from "@/components/headerComponent";
 import IBeer from "@/interfaces/Ibeer";
 import { useEffect } from "react";
+
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -67,7 +68,7 @@ export default function BeerDetailsSkeleton() {
             <ul>
               {Array.from({ length: 5 }).map((_, index) => (
                 <>
-                  <li key={index} className="list-disc">
+                  <li key={`skeletonhop-${index}`} className="list-disc">
                     <Skeleton height={20} width={200} />
                   </li>
                 </>
@@ -82,7 +83,7 @@ export default function BeerDetailsSkeleton() {
             </h3>
             <ul>
               {Array.from({ length: 5 }).map((_, index) => (
-                <li key={index} className="list-disc">
+                <li key={`skeletonmalt+${index}`} className="list-disc">
                   <Skeleton height={20} width={200} />
                 </li>
               ))}
