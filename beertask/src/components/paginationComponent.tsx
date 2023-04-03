@@ -1,14 +1,18 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+type Props = {
+  setPageNumber:(newPageNumber: number) => void,
+  pageNumber:number
+};
 
-export default function Pagination(Props: any) {
+export default function Pagination(props: Props) {
   const router = useRouter();
 
   const changePage = (number: number) => {
-    const newPageNumber = Props.pageNumber + number;
+    const newPageNumber = props.pageNumber + number;
 
     if (newPageNumber >= 1 && newPageNumber <= 29) {
-      Props.setPageNumber(newPageNumber);
+      props.setPageNumber(newPageNumber);
 
       // Update URL parameter
       router.push(`/?page=${newPageNumber}`);
@@ -19,7 +23,7 @@ export default function Pagination(Props: any) {
     // Update page number based on URL parameter
     const page = parseInt(router.query.page as string);
     if (!isNaN(page)) {
-      Props.setPageNumber(page);
+      props.setPageNumber(page);
     }
   }, [router.query]);
 
@@ -33,7 +37,7 @@ export default function Pagination(Props: any) {
         />
 
         <div className="mx-2 mt-[1px] flex h-8 w-8 select-none justify-center rounded border bg-orange-500 text-xl font-bold text-white">
-          {Props.pageNumber}
+          {props.pageNumber}
         </div>
 
         <img

@@ -1,5 +1,7 @@
 import Header from "@/components/headerComponent";
 import IBeer from "@/interfaces/Ibeer";
+import Ihop from "@/interfaces/Ihop";
+import Imalt from "@/interfaces/Imalt";
 
 import BeerDetailsSkeleton from "./skeletons/beerDetailsSkeleton";
 
@@ -61,9 +63,9 @@ export default function BeerDetailComponent(props: Props) {
               </h3>
               <ul>
                 {props.data.ingredients.hops.map(
-                  (ingredient: any, index: number) => (
+                  (ingredient: Ihop, index) => (
                     <>
-                      <li key={index} className="list-disc">
+                      <li key={`hop-${index}`} className="list-disc">
                         {ingredient.name}
                         {" - "}
                         <span className="font-bold">
@@ -83,8 +85,8 @@ export default function BeerDetailComponent(props: Props) {
               </h3>
               <ul>
                 {props.data.ingredients.malt.map(
-                  (ingredient: any, index: number) => (
-                    <li key={index} className="list-disc">
+                  (ingredient: Imalt, index) => (
+                    <li  className="list-disc" key={`malt-${index}`}>
                       {ingredient.name}
                       {" - "}
                       <span className="font-bold">

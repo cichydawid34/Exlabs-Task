@@ -1,4 +1,6 @@
 import { Key } from "react";
+import IHoop from "./Ihop";
+import IMalt from "./Ihop";
 
 export default interface IBeer {
   id: Key;
@@ -12,8 +14,8 @@ export default interface IBeer {
   name: string;
   ph: number;
   ingredients: {
-    hops: string[];
-    malt: string[];
+    hops: IHoop[];
+    malt: IMalt[];
     yeast: string;
   };
   srm: number;
